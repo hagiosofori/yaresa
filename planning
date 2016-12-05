@@ -1,0 +1,44 @@
+so what's the plan?
+: alternate the days; one for coding, the next for 
+research.
+
+
+: index page 
+    : with sliding menu to the various major pages
+        [1. to records module
+         2. go to knowledge 
+         3. health promotion 
+: records module page
+    : a form for querying the database, with option for adding a new community member
+        : a tabulated page with the various tabs for adding a new community member  
+        
+        : go to report page, also a tabulated page
+
+: go to knowledge, also a tabulated page.
+    : device sync
+
+: health promotion
+    : form to be filled for health promotion
+
+: child welfare search and add form
+    : add child from community
+        : form to search for and select child
+    : add new child
+        : tabulated page
+
+: tasks for the month
+    : for now they should just be a list on the home page. the only other thing apart from the s[l]ide menu.
+
+********************************************************
+
+index page
+
+1. sliding menu to the right.
+: on the menu   
+    : records
+    : knowledge
+    : health promotion\
+    : child welfare
+
+
+2. records page
