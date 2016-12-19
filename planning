@@ -42,3 +42,47 @@ index page
 
 
 2. records page
+
+
+*********************************
+
+starting work.
+
+1. home page. 
+: should have the summaries, in list form.
+
+: should have side bar with list of 
+
+2. records page
+: all community field
+    it also has the list of all communities in there, so either of the communities can be selected.
+
+: sort by dropdown
+    : name
+    : card number
+    : id.
+
+: add community member button
+    : takes you to the add community member page.
+
+**************
+: name field [for searching for a community member]
+    : it has the label [enter name and click find]
+
+    : all in community field
+        : all in community is also one of the options. the other options include
+        
+        : by name
+        : by card number
+        : nhis expiring
+        : opd in last 30 days
+        : vaccine in a week
+        : by age.
+        : under 2 years.
+
+: a table containing the search results.
+    : has gender, a number, full name, some other numbers, community.
+
+    : has next and previous buttons, for showing multiple pages of search results.
+
+: how many pages in all?

@@ -2,18 +2,91 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Records</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-    </body>
+    <div class="container form-inline">
+        <div class="row">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle col-sm-4 form-control" type="button" data-toggle="dropdown">Select Community
+  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">All Communities</a></li>
+                    <li><a href="#">community 1</a></li>
+                    <li><a href="#">Community 2</a></li>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <button class="col-sm-4 col-sm-offset-1 btn-primary btn dropdown-toggle form-control" type="button" data-toggle="dropdown">Sort by<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Name</a></li>
+                    <li><a href="#">Card number</a></li>
+                    <li><a href="#">ID</a></li>
+                </ul>
+            </div>
+            <a href="#" <button class="btn btn-primary col-sm-2 col-sm-offset-1 form-control">Add Community Member</button></a>
+
+        </div>
+        <br>
+        <div class="row">
+
+            <input class="col-sm-4 form-control" type="text">
+            <div class="dropdown">
+                <button class="col-sm-7 btn-primary btn col-sm-offset-1 dropdown-toggle form-control" type="button" data-toggle="dropdown">Filter by<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li><a href="#">All in community</a></li>
+                    <li><a href="#">Name</a></li>
+                    <li><a href="#">Card Number</a></li>
+                    <li><a href="#">OPD in last 30 days</a></li>
+                    <li><a href="#">Vaccination in a week</a></li>
+                    <li><a href="#">By age</a></li>
+                    <li><a href="#">Under 2 years</a></li>
+                </ul>
+            </div>
+        </div>
+        <br>
+        <table class="table-striped table-bordered table table-responsive table-condensed">
+            <thead>
+                <tr>
+                    <th>Gender</th>
+                    <th>Number</th>
+                    <th>Full Name</th>
+                    <th>Number</th>
+                    <th>Community</th>
+                </tr>
+            </thead>
+            <tr>
+                <td>Male</td>
+                <td>1</td>
+                <td>Alvin Ofori</td>
+                <td>2</td>
+                <td>Berekuso</td>
+            </tr>
+            <tr>
+                <td>Female</td>
+                <td>5</td>
+                <td>Florence Ofori</td>
+                <td>2</td>
+                <td>Madina</td>
+            </tr>
+            </thead>
+    </div>
+</body>
+
 </html>
