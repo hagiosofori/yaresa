@@ -94,6 +94,7 @@ starting work.
 6. knowledge page [with 2 tabs](done)
 7. sync page.(done)
 8. health promotion page**[I need to find this one].
+    : update. found it, but it seems redundant. might not be implemented.
 9. add health promotion page.(done)
 10. child welfare page.
 11. add child page.[with 4 tabs]
@@ -106,3 +107,11 @@ learnings
 
 bootstrap
 : 
+
+*****************************************
+: from dr. amanquah
+1. work on recording patient visits functionality. that is the most important
+
+2. work on the reports. that is next most important.
+
+3. next after that is moving data to the cloud. that is third most important.
