@@ -3,7 +3,7 @@ var db;
 //function to initialize the database object
 function initDatabase(){
 
-    db = window.openDatabase('yaresadb', 1.0, 'Yaresa DB', 10000000);
+    db = window.openDatabase('yaresadb', 1.0, 'Yaresa DB', 1000000);
 }
 
 
@@ -24,6 +24,10 @@ function initDatabase(){
         : NHIS card number [number]
         : expiry date of NHIS [date]
        
+    * communities
+        : id [autoincrement, primary key]
+        : name [text]
+
     * 
 
 */
