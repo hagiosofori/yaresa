@@ -190,6 +190,14 @@ function dropCommunitiesTable(){
 }
 
 //function to drop opd records table.
+function dropOPDrecordsTable(){
+    executeSQL(dropOPDtableStatement);
+}
+
+//function to drop vaccination records table.
+function dropVaccinationecordsTable(){
+    executeSQL(dropVaccinationTableStatement);
+
 
 /**INSERT RECORDS FUNCTIONS */
 function insertUser(){
@@ -224,7 +232,7 @@ function fetchUser(id){
         function(tx){
             tx.executeSql()
         }
-    )
+    );
 }
 
 //function to delete record from 
@@ -233,4 +241,5 @@ function fetchUser(id){
 document.ready(function(){
     initDatabase();
     createTables();
-});
+}
+)};
