@@ -200,10 +200,11 @@ function dropVaccinationecordsTable(){
 
 
 /**INSERT RECORDS FUNCTIONS */
-function insertUser(){
+function insertUser(community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate){
     db.transaction(
         function(tx){
-            tx.executeSql(insertUserStatement);
+            tx.executeSql(insertUserStatement, [community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate]);
+            //specify callback function that indicates success, and indicates when there's a failure.
         }
     )
 }
