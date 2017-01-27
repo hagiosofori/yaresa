@@ -5,7 +5,7 @@
 
 
 /**Function to save the details of a new member to the local database. */
-function saveNewMember(){
+function saveNewMember() {
     validate();
 
     var community = "";
@@ -23,11 +23,15 @@ function saveNewMember(){
 }
 
 //function to clear the textboxes for a new entry
-function clearFields(){
+function clearFields() {
+    var inputs = document.getElementsByTagName("input");
 
+    for (var i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
+    }
 }
 
 //function to validate the input before saving.
-function validate(){
-    $("input").value="";
+function validate() {
+
 }
