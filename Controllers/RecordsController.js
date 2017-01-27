@@ -24,11 +24,8 @@ function saveNewMember() {
 
 //function to clear the textboxes for a new entry
 function clearFields() {
-    var inputs = document.getElementsByTagName("input");
-
-    for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-    }
+    document.getElementById("memberform").reset();
+    document.getElementById("status").innerHTML="success";
 }
 
 //function to validate the input before saving.

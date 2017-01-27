@@ -21,6 +21,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="container form-inline">
+        <div id="status" style="background-color:yellow">Status</div>
         <div class="">
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">Select Community
@@ -122,7 +123,7 @@
                             <!--Tab Content -->
                             <div class="tab-content">
                                 <div class="tab-pane  active" id="basic" role="tabpanel">
-                                    <form>
+                                    <form id="memberform">
 
                                         <div class="form-group">
                                             <button type="dropdown" class="form-control btn btn-primary dropdown-toggle">Community</button>
@@ -199,7 +200,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary">Save changes</button>
-                                <button type="button" class="btn btn-primary" onclick="clearfields()">Enter New Record</button>
+                                <button type="button" class="btn btn-primary" onclick="clearFields()">Enter New Record</button>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
@@ -214,6 +215,8 @@
                 crossorigin="anonymous"></script>
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
                 crossorigin="anonymous"></script>
+
+            <script src="../Models/database.js"></script>    
 
             <script src="../Controllers/RecordsController.js"></script>
 
