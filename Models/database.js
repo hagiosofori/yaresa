@@ -49,7 +49,7 @@ var dataset; //variable to store and return the results of queries
 
 /**CREATE TABLES QUERIES */
 var createUsersTableStatement = "CREATE TABLE IF NOT EXISTS Users (id primary key autoincrement, username text, password text)"; 
-var createMembersTableStatement = "CREATE TABLE IF NOT EXISTS Members (id primary key autoincrement, firstName text, lastName text, birthDate DATETIME, age number, gender char, cardNumber number, NHISnumber number, NHISexpiry DATETIME)"; 
+var createMembersTableStatement = "CREATE TABLE IF NOT EXISTS Members (id primary key autoincrement, firstName text, lastName text, birthDate DATETIME, age number, gender char, cardNumber number, NHISnumber number, NHISexpiry DATETIME, community NUMBER)"; 
 var createCommunitiesTableStatement = "CREATE TABLE IF NOT EXISTS Communities (id autoincrement primary key, name text)"; 
 var createOPDtableStatement = "";
 var createVaccinationTableStatement = "";
@@ -66,8 +66,8 @@ var dropFamilyPlanningTableStatement = "";
 
 
 /**INSERT RECORDS QUERIES */
-var insertUserStatement = "";
-var insertMemberStatement = "";
+var insertUserStatement = "INSERT INTO ";
+var insertMemberStatement = "INSERT INTO Members (firstName, lastName, birthdate, age, gender, cardNumber, NHISnumber, NHISexpiry, community) VALUES (?,?,?,?,?,?,?,?,?)";
 var insertCommunityStatement = "";
 var insertOPDrecordStatement = "";
 var insertVaccinationRecordStatement ="";
@@ -200,10 +200,10 @@ function dropVaccinationecordsTable(){
 
 
 /**INSERT RECORDS FUNCTIONS */
-function insertUser(community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate){
+function insertMember(community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate){
     db.transaction(
         function(tx){
-            tx.executeSql(insertUserStatement, [community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate]);
+            tx.executeSql(insertUserStatement, [firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate, community], onSuccess);
             //specify callback function that indicates success, and indicates when there's a failure.
         }
     )
@@ -238,6 +238,16 @@ function fetchUser(id){
 
 //function to delete record from 
 
+
+
+
+
+
+
+//function to display success
+function onSuccess(){
+    return "inserted the user";
+}
 //query to be run when the page is loaded.
 document.ready(function(){
     initDatabase();

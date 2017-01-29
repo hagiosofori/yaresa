@@ -22,203 +22,203 @@
         <![endif]-->
     <div class="container form-inline">
         <div id="status" style="background-color:yellow">Status</div>
-        <div class="">
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">Select Community
+<div class="">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">Select Community
   <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">All Communities</a></li>
-                    <li><a href="#">community 1</a></li>
-                    <li><a href="#">Community 2</a></li>
-                </ul>
-            </div>
-            <div class="dropdown">
-                <button class="btn-primary btn dropdown-toggle form-control" type="button" data-toggle="dropdown">Sort by<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Name</a></li>
-                    <li><a href="#">Card number</a></li>
-                    <li><a href="#">ID</a></li>
-                </ul>
-            </div>
-            <a href="#" <button class="btn btn-primary  form-control" data-toggle="modal" data-target="#addmember">Add Community Member</button></a>
+        <ul class="dropdown-menu">
+            <li><a href="#">All Communities</a></li>
+            <li><a href="#">community 1</a></li>
+            <li><a href="#">Community 2</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn-primary btn dropdown-toggle form-control" type="button" data-toggle="dropdown">Sort by<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Name</a></li>
+            <li><a href="#">Card number</a></li>
+            <li><a href="#">ID</a></li>
+        </ul>
+    </div>
+    <a href="#" <button class="btn btn-primary  form-control" data-toggle="modal" data-target="#addmember">Add Community Member</button></a>
 
-        </div>
-        <br>
-        <div class="row">
+</div>
+<br>
+<div class="row">
 
-            <input class=" form-control" type="text">
-            <div class="dropdown">
-                <button class="btn-primary btn  dropdown-toggle form-control" type="button" data-toggle="dropdown">Filter by<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">All in community</a></li>
-                    <li><a href="#">Name</a></li>
-                    <li><a href="#">Card Number</a></li>
-                    <li><a href="#">OPD in last 30 days</a></li>
-                    <li><a href="#">Vaccination in a week</a></li>
-                    <li><a href="#">By age</a></li>
-                    <li><a href="#">Under 2 years</a></li>
-                </ul>
-            </div>
-        </div>
-        <br>
-        <table class="table-striped table-bordered table table-responsive table-condensed">
-            <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th>Gender</th>
-                    <th>Number</th>
-                    <th>Full Name</th>
-                    <th>Number</th>
-                    <th>Community</th>
-                </tr>
-            </thead>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Male</td>
-                <td>1</td>
-                <td>Alvin Ofori</td>
-                <td>2</td>
-                <td>Berekuso</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Female</td>
-                <td>5</td>
-                <td>Florence Ofori</td>
-                <td>2</td>
-                <td>Madina</td>
-            </tr>
-            </thead>
+    <input class=" form-control" type="text">
+    <div class="dropdown">
+        <button class="btn-primary btn  dropdown-toggle form-control" type="button" data-toggle="dropdown">Filter by<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">All in community</a></li>
+            <li><a href="#">Name</a></li>
+            <li><a href="#">Card Number</a></li>
+            <li><a href="#">OPD in last 30 days</a></li>
+            <li><a href="#">Vaccination in a week</a></li>
+            <li><a href="#">By age</a></li>
+            <li><a href="#">Under 2 years</a></li>
+        </ul>
+    </div>
+</div>
+<br>
+<table class="table-striped table-bordered table table-responsive table-condensed">
+    <thead>
+        <tr>
+            <th><input type="checkbox"></th>
+            <th>Gender</th>
+            <th>Number</th>
+            <th>Full Name</th>
+            <th>Number</th>
+            <th>Community</th>
+        </tr>
+    </thead>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>Male</td>
+        <td>1</td>
+        <td>Alvin Ofori</td>
+        <td>2</td>
+        <td>Berekuso</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>Female</td>
+        <td>5</td>
+        <td>Florence Ofori</td>
+        <td>2</td>
+        <td>Madina</td>
+    </tr>
+    </thead>
 
 
-            <!--modal for add new community member form-->
+    <!--modal for add new community member form-->
 
-            <div class="modal fade" id="addmember">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Add New Community Member</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal fade" id="addmember">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Community Member</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+                </div>
+
+                <div class="modal-body">
+                    <!--in here, a form having the basic, opd, vaccination and family planning details of the member-->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#basic" role="tab" data-toggle="tab">Basic</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#opd" role="tab" data-toggle="tab">OPD</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#vaccination" role="tab" data-toggle="tab">Vaccination</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#familyplanning" role="tab" data-toggle="tab">Family Planning</a>
+                        </li>
+                    </ul>
+
+                    <!--Tab Content -->
+                    <div class="tab-content">
+                        <div class="tab-pane  active" id="basic" role="tabpanel">
+                            <form id="memberform">
+
+                                <div class="form-group">
+                                    <div class="dropdown">
+                                        <button type="dropdown" class="form-control btn btn-primary dropdown-toggle" id="new-mem-comm" data-toggle="dropdown">Community<span class="caret"></span></button>
+
+
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item selected" href="#"> --list of communities--</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>First name</label>
+                                    <input type="text" class="form-control" id="fname">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Last name</label>
+                                    <input type="text" class="form-control" id="lname">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="checkbox" class="active"><label>Birth Date</label>
+                                    <input type="date" class="form-control" id="bdate">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Age</label>
+                                    <input type="number" class="form-control disabled" id="age">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Hospital Card Number</label>
+                                    <input type="number" class="form-control" id="cardNum">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>NHIS Card Number</label>
+                                    <input type="number" class="form-control" id="nhisNum">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>NHIS expiry date</label>
+                                    <input type="date" class="form-control" id="nhisExpiry">
+                                </div>
+
+
+                            </form>
                         </div>
 
-                        <div class="modal-body">
-                            <!--in here, a form having the basic, opd, vaccination and family planning details of the member-->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#basic" role="tab" data-toggle="tab">Basic</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#opd" role="tab" data-toggle="tab">OPD</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#vaccination" role="tab" data-toggle="tab">Vaccination</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#familyplanning" role="tab" data-toggle="tab">Family Planning</a>
-                                </li>
-                            </ul>
 
-                            <!--Tab Content -->
-                            <div class="tab-content">
-                                <div class="tab-pane  active" id="basic" role="tabpanel">
-                                    <form id="memberform">
-
-                                        <div class="form-group">
-                                            <button type="dropdown" class="form-control btn btn-primary dropdown-toggle">Community</button>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item">--list of communities--</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>First name</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Last name</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input type="checkbox" class="active"><label>Birth Date</label>
-                                            <input type="date" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Age</label>
-                                            <input type="number" class="form-control disabled">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>Hospital Card Number</label>
-                                            <input type="number" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>NHIS Card Number</label>
-                                            <input type="number" class="form-control">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label>NHIS expiry date</label>
-                                            <input type="date" class="form-control">
-                                        </div>
-
-
-                                    </form>
-                                </div>
-
-
-                                <div class="tab-pane" id="opd" role="tabpanel">
-                                    <form>
-                                        basic form goes here.
-                                    </form>
-                                </div>
+                        <div class="tab-pane" id="opd" role="tabpanel">
+                            <form>
+                                basic form goes here.
+                            </form>
+                        </div>
 
 
 
-                                <div class="tab-pane" id="vaccination" role="tabpanel">
-                                    <form>
-                                        basic form goes here.
-                                    </form>
-                                </div>
+                        <div class="tab-pane" id="vaccination" role="tabpanel">
+                            <form>
+                                basic form goes here.
+                            </form>
+                        </div>
 
 
 
-                                <div class="tab-pane" id="familyplanning" role="tabpanel">
-                                    <form>
-                                        basic form goes here.
-                                    </form>
+                        <div class="tab-pane" id="familyplanning" role="tabpanel">
+                            <form>
+                                basic form goes here.
+                            </form>
 
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                                <button type="button" class="btn btn-primary" onclick="clearFields()">Enter New Record</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="saveNewMember()">Save changes</button>
+<button type="button" class="btn btn-primary" onclick="clearFields()">Enter New Record</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
-            <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-                crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-                crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-                crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+    crossorigin="anonymous"></script>
 
-            <script src="../Models/database.js"></script>    
-
-            <script src="../Controllers/RecordsController.js"></script>
+<script src="../Models/database.js"></script>
+<script src="../Controllers/RecordsController.js"></script>
 
 
 </body>
