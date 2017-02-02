@@ -1,3 +1,10 @@
+
+
+//linking to database.js file.
+var database = document.createElement('script');
+database.src = '../Models/database.js';
+document.head.appendChild(database);
+
 /**This controller is the intermediary between the Records view and the database
  * 
  */
@@ -12,7 +19,7 @@ function saveNewMember() {
     /**var input = document.getElementById("new-mem-comm");
     var community = input.value;
     */
-
+    var community = document.getElementById('community').value;
     var firstName = document.getElementById("fname").value;
     var lastName = document.getElementById("lname").value;
 
@@ -30,7 +37,9 @@ function saveNewMember() {
     var nhisExpiryDate = document.getElementById('nhisExpiry');
      
      document.getElementById("status").innerHTML = "alvin";
-    var result = insertUser(community, firstName, lastName, birthDate, age, cardNumber, nhisCardNum, nhisExpiryDate);
+    
+   
+    var result = insertMember(community, firstName, lastName, birthDate, age, cardNumber, nhisCardNum, nhisExpiryDate);
 document.getElementById("status").innerHTML = "ofori";
 document.getElementById('status').innerHTML = result;
 

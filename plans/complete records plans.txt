@@ -1,0 +1,13 @@
+current status
+
+: controller successfully takes and stores most of the data of the basic form.
+
+
+to do [JUST MAKE IT WORK! WE'LL CARE ABOUT EVERYTHING ELSE LATER.]
+: take all the content of the basic, create and store new member in database.
+
+: populate the communities dropdown with the communities from the database.
+
+: validation for the form.
+
+: making bootstrap files local, for offline use.

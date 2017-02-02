@@ -1,3 +1,5 @@
+alert("database");
+
 /**
  * IMPROVEMENTS THAT CAN BE MADE
  * 
@@ -197,7 +199,7 @@ function dropOPDrecordsTable(){
 //function to drop vaccination records table.
 function dropVaccinationecordsTable(){
     executeSQL(dropVaccinationTableStatement);
-
+}
 
 /**INSERT RECORDS FUNCTIONS */
 function insertMember(community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate){
@@ -249,8 +251,7 @@ function onSuccess(){
     return "inserted the user";
 }
 //query to be run when the page is loaded.
-document.ready(function(){
+function initDB(){
     initDatabase();
     createTables();
 }
-)};
