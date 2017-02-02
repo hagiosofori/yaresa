@@ -251,7 +251,8 @@ function onSuccess(){
     return "inserted the user";
 }
 //query to be run when the page is loaded.
-function initDB(){
+$(document).ready(function(){
     initDatabase();
     createTables();
 }
+);
