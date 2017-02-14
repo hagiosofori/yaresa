@@ -1,5 +1,3 @@
-alert("database");
-
 /**
  * IMPROVEMENTS THAT CAN BE MADE
  * 
@@ -50,29 +48,39 @@ var dataset; //variable to store and return the results of queries
 
 
 /**CREATE TABLES QUERIES */
-var createUsersTableStatement = "CREATE TABLE IF NOT EXISTS Users (id primary key autoincrement, username text, password text)"; 
-var createMembersTableStatement = "CREATE TABLE IF NOT EXISTS Members (id primary key autoincrement, firstName text, lastName text, birthDate DATETIME, age number, gender char, cardNumber number, NHISnumber number, NHISexpiry DATETIME, community NUMBER)"; 
-var createCommunitiesTableStatement = "CREATE TABLE IF NOT EXISTS Communities (id autoincrement primary key, name text)"; 
-var createOPDtableStatement = "";
-var createVaccinationTableStatement = "";
-var createFamilyPlanningTableStatement = "";
+var createUsersTableStatement = "CREATE TABLE IF NOT EXISTS Users (id int NOT NULL AUTO_INCREMENT, username varchar(255), pword varchar(255), PRIMARY KEY(id))";
+
+var createMembersTableStatement = "CREATE TABLE IF NOT EXISTS Members (memberID int NOT NULL AUTO_INCREMENT, firstName varchar(255), lastName varchar(255), birthDate DATE, age int, gender varchar(2), cardNumber int, NHISnumber int, NHISexpiry DATE, community int, PRIMARY KEY(MemberID));";
+
+var createCommunitiesTableStatement = "CREATE TABLE IF NOT EXISTS Communities (communityID int NOT NULL AUTO_INCREMENT, name varchar(255), PRIMARY KEY(communityID));";
+
+var createOPDtableStatement = "CREATE TABLE IF NOT EXISTS OPDs (opdID int NOT NULL AUTO_INCREMENT, memberID int, PRIMARY KEY(opdID), CONSTRAINT fk_memberID FORIEGN KEY (memberID) REFERENCES Members(memberID))";
+
+var createVaccinationTableStatement = "CREATE TABLE IF NOT EXISTS Vaccinations (vaccinationID int NOT NULL AUTO_INCREMENT, memberID int, PRIMARY KEY(vaccinationID), CONSTRAINT fk_memberID FORIEGN KEY (memberID) REFERENCES Members(memberID))";
+
+var createFamilyPlanningTableStatement = "CREATE TABLE IF NOT EXISTS FamilyPlanning (familyPlanningID int NOT NULL AUTO_INCREMENT, memberID int, PRIMARY KEY(familyPlanningID), CONSTRAINT fk_memberID FOREIGN KEY (memberID) REFERENCES Members(memberID))";
 
 
 /**DROP TABLES QUERIES */
 var dropMembersTableStatement = "DROP TABLE Members";
 var dropUsersTableStatement = "DROP TABLE Users";
 var dropCommunitiesTableStatement = "DROP TABLE Communities";
-var dropOPDtableStatement = "";
-var dropVaccinationTableStatement = "";
-var dropFamilyPlanningTableStatement = "";
+var dropOPDtableStatement = "DROP TABLE OPDs";
+var dropVaccinationTableStatement = "DROP TABLE Vaccinations";
+var dropFamilyPlanningTableStatement = "DROP TABLE FamilyPlanning";
 
 
 /**INSERT RECORDS QUERIES */
-var insertUserStatement = "INSERT INTO ";
+var insertUserStatement = "INSERT INTO Users (username, pword) VALUES (?,?)";
+
 var insertMemberStatement = "INSERT INTO Members (firstName, lastName, birthdate, age, gender, cardNumber, NHISnumber, NHISexpiry, community) VALUES (?,?,?,?,?,?,?,?,?)";
-var insertCommunityStatement = "";
-var insertOPDrecordStatement = "";
-var insertVaccinationRecordStatement ="";
+
+var insertCommunityStatement = "INSERT INTO Communities(name) VALUES(?)";
+
+var insertOPDrecordStatement = "INSERT INTO OPDs (memberID) VALUES (?)";
+
+var insertVaccinationRecordStatement = "";
+
 var insertFamilyPlanningRecordStatement = "";
 
 
@@ -85,16 +93,21 @@ var deleteVaccinationRecordStatement = "";
 var deleteFamilyPlanningiRecordStatement = "";
 
 
+/**FETCH RECORD QUERIES */
+var fetchAllMembersStatement = "SELECT * FROM Members";
+
+
 /**DATABASE INITIALIZATION QUERY */
-function initDatabase(){
+function initDatabase() {
     db = window.openDatabase('yaresadb', 1.0, 'Yaresa DB', 1000000);
+
 }
 
 /**EXECUTE SQL FUNCTION. */
-function executeSQL(query, parameters, callbackFunction){
+function executeSQL(query, parameters, callbackFunction) {
     db.transaction(
-        function(tx){
-            tx.executeSql(query="", parameters=[], callbackFunction);
+        function (tx) {
+            tx.executeSql(query = "", parameters = [], callbackFunction);
         }
     );
 }
@@ -102,53 +115,54 @@ function executeSQL(query, parameters, callbackFunction){
 /*CREATE TABLES FUNCTIONS*/
 
 //function to create all tables
-function createTables(){
+function createTables() {
     createUsersTable();
     createMembersTable();
     createCommunitiesTable();
+    alert('created database tables');
 }
 
 //function to create users table in local database.
-function createUsersTable(){
+function createUsersTable() {
     executeSQL(createUsersTableStatement);
 }
 
 //function to create members table in local database
-function createMembersTable(){
+function createMembersTable() {
     executeSQL(createMembersTableStatement);
 }
 
 //function to create communities table in local database
-function createCommunitiesTable(){
+function createCommunitiesTable() {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(createCommunitiesTableStatement);
         }
     )
 }
 
 //function to create OPD records table in local database.
-function createOPDtable(){
+function createOPDtable() {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(createOPDtableStatement);
         }
     )
 }
 
 //function to create vaccination records table in local database.
-function createVaccinationTable(){
+function createVaccinationTable() {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(createVaccinationTableStatement);
         }
     )
 }
 
 //function to create family planning records table in local database.
-function createFamilyPlanningTable(){
+function createFamilyPlanningTable() {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(createFamilyPlanningTableStatement);
         }
     )
@@ -158,57 +172,59 @@ function createFamilyPlanningTable(){
 /**DROP TABLES FUNCTIONS */
 
 //function to drop tables in local database
-function dropAllTables(){
+function dropAllTables() {
     dropUsersTable();
     dropMembersTable();
     dropCommunitiesTable();
 }
 
 //function to drop users database.
-function dropUsersTable(){
+function dropUsersTable() {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(dropUsersTableStatement);
         }
     )
 }
 
 //function to drop members table 
-function dropMembersTable(){
+function dropMembersTable() {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(dropMembersTableStatement);
         }
     )
 }
 
 //function to drop communities table.
-function dropCommunitiesTable(){
+function dropCommunitiesTable() {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(dropCommunitiesTableStatement);
         }
     )
 }
 
 //function to drop opd records table.
-function dropOPDrecordsTable(){
+function dropOPDrecordsTable() {
     executeSQL(dropOPDtableStatement);
 }
 
 //function to drop vaccination records table.
-function dropVaccinationecordsTable(){
+function dropVaccinationecordsTable() {
     executeSQL(dropVaccinationTableStatement);
 }
 
 /**INSERT RECORDS FUNCTIONS */
-function insertMember(community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate){
+function insertMember(community, firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate) {
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql(insertUserStatement, [firstName, lastName, birthDate, age, cardNumber, NHIScardNum, NHISexpiryDate, community], onSuccess);
             //specify callback function that indicates success, and indicates when there's a failure.
         }
-    )
+    );
+    alert('successfully inserted');
+    fetchMembers();
 }
 
 
@@ -217,10 +233,10 @@ function insertMember(community, firstName, lastName, birthDate, age, cardNumber
 
 
 /**READ RECORDS FUNCTIONS */
-function fetchAllUsers(){
+function fetchAllUsers() {
     db.transaction(
-        function(tx){
-            tx.executeSql(fetchAllUsersStatement, [], function(tx, results){
+        function (tx) {
+            tx.executeSql(fetchAllUsersStatement, [], function (tx, results) {
                 dataset = result.rows;
                 return dataset;
             })
@@ -229,13 +245,25 @@ function fetchAllUsers(){
 }
 
 //function to fetch user given id.
-function fetchUser(id){
+function fetchUser(id) {
     var userid = id.toString();
     db.transaction(
-        function(tx){
+        function (tx) {
             tx.executeSql()
         }
     );
+}
+
+//function to fetch all members.
+function fetchMembers() {
+    var result = [];
+    db.transaction(
+        function (tx) {
+            tx.executeSql(fetchAllMembersStatement, [], function (tx, rs) {
+                document.getElementById('status') = rs;
+
+            });
+        });
 }
 
 //function to delete record from 
@@ -247,11 +275,11 @@ function fetchUser(id){
 
 
 //function to display success
-function onSuccess(){
+function onSuccess() {
     return "inserted the user";
 }
 //query to be run when the page is loaded.
-$(document).ready(function(){
+$(document).ready(function () {
     initDatabase();
     createTables();
 }

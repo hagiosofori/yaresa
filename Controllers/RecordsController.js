@@ -39,9 +39,8 @@ function saveNewMember() {
      document.getElementById("status").innerHTML = "alvin";
     
    
-    var result = insertMember(community, firstName, lastName, birthDate, age, cardNumber, nhisCardNum, nhisExpiryDate);
-document.getElementById("status").innerHTML = "ofori";
-document.getElementById('status').innerHTML = result;
+    var result ="";
+    result= insertMember(community, firstName, lastName, birthDate, age, cardNumber, nhisCardNum, nhisExpiryDate);
 
 }
 
