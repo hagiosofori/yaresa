@@ -138,7 +138,7 @@ function createCommunitiesTable() {
         function (tx) {
             tx.executeSql(createCommunitiesTableStatement);
         }
-    )
+    )   
 }
 
 //function to create OPD records table in local database.
