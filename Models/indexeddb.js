@@ -33,37 +33,54 @@ function checkForAlreadyExistingDB() {
             db.close();
 
             var secondRequest = indexedDB.open("yaresa", version + 1);
-            secondRequest.onupgradeneeded = createObjectStores();
+            secondRequest.onupgradeneeded = function (e) {
+                createObjectStores(e);
             }
-
         }
-        request.onupgradeneeded = createObjectStores(e);
 
-        request.onerror = function(e){
+        request.onupgradeneeded = function (e) {
+            createObjectStores(e);
+        }
+
+        request.onerror = function (e) {
             console.log("Error");
             console.dir(e);
         }
+
     }
 
+}
 
-function createObjectStores() {
+/** function to create object stores in indexed database */
+function createObjectStores(e) {
+    db = e.target.result;
     console.log("creating object stores");
 
-    if(!db.objectStoreNames.contains("members")){
+    if (!db.objectStoreNames.contains("members")) {
         db.createObjectStore("members");
     }
 
-    if(!db.objectStoreNames.contains("users")){
+    if (!db.objectStoreNames.contains("users")) {
         db.createObjectStore("users");
     }
-
+   
 }
 
 
-/** function to create objectstore for members */
-function createMembersObjectStore() {
+function insertMember(memberjson){
+    var transaction = db.transaction(["member"], "readwrite");
+    alert(transaction);
+    var store = transaction.objectStore("member");
 
+    var request = store.add(memberjson, );
+
+    request.onerror=function(e){
+        console.log("Error", e.target.error.name);
+        alert("Unable to save member");
+    }
 }
+
+
 
 
 
