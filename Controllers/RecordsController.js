@@ -2,7 +2,7 @@
 
 //linking to database.js file.
 var database = document.createElement('script');
-database.src = '../Models/database.js';
+database.src = '../Models/indexeddb.js';
 document.head.appendChild(database);
 
 /**This controller is the intermediary between the Records view and the database

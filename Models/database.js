@@ -119,7 +119,6 @@ function createTables() {
     createUsersTable();
     createMembersTable();
     createCommunitiesTable();
-    alert('created database tables');
 }
 
 //function to create users table in local database.
@@ -279,8 +278,3 @@ function onSuccess() {
     return "inserted the user";
 }
 //query to be run when the page is loaded.
-$(document).ready(function () {
-    initDatabase();
-    createTables();
-}
-);

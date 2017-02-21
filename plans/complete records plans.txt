@@ -12,3 +12,11 @@ to do [JUST MAKE IT WORK! WE'LL CARE ABOUT EVERYTHING ELSE LATER.]
 
 : making bootstrap files local, for offline use.
 
+
+right now, we need to learn about jquery mobile and indexedb
+
+
+
+INDEXEDDB tutorials.
+
+just the right slide menu, to the records page.
