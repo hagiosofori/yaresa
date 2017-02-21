@@ -23,11 +23,11 @@ var dataset; //variable to store and return the results of queries
         : first name [text]
         : last name [text]
         : birth date [date]
-        : age [number]
-        : gender ['varchar'] will be M/F
+        : gender [male or female]
         : card number [number ,primary key]
         : NHIS card number [number, primary key]
         : expiry date of NHIS [date]
+        : isbirthdate 
        
     * communities
         : id [autoincrement, primary key]
@@ -222,7 +222,7 @@ function insertMember(community, firstName, lastName, birthDate, age, cardNumber
             //specify callback function that indicates success, and indicates when there's a failure.
         }
     );
-    alert('successfully inserted');
+     console.log('successfully inserted');
     fetchMembers();
 }
 
