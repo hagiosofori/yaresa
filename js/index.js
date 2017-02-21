@@ -1,15 +1,28 @@
+$(document).ready(function () {
+  var trigger = $('.hamburger'),
+      overlay = $('.overlay'),
+     isClosed = false;
 
-var menuLeft = document.getElementById('cbp-spmenu-s1'),
-    body = document.body;
+    trigger.click(function () {
+      hamburger_cross();      
+    });
 
-showLeft.onclick = function () {
-    classie.toggle(this, 'active');
-    classie.toggle(menuLeft, 'cbp-spmenu-open');
-    disableOther('showLeft');
-};
+    function hamburger_cross() {
 
-function disableOther(button) {
-    if (button !== 'showLeft') {
-        classie.toggle(showLeft, 'disabled');
-    }
-}
+      if (isClosed == true) {          
+        overlay.hide();
+        trigger.removeClass('is-open');
+        trigger.addClass('is-closed');
+        isClosed = false;
+      } else {   
+        overlay.show();
+        trigger.removeClass('is-closed');
+        trigger.addClass('is-open');
+        isClosed = true;
+      }
+  }
+  
+  $('[data-toggle="offcanvas"]').click(function () {
+        $('#wrapper').toggleClass('toggled');
+  });  
+});
