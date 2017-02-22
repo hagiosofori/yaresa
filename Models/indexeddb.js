@@ -102,6 +102,8 @@ function insertMember(memberjson) {
         console.log("Success");
         console.log("Added new member");
     }
+
+    alert(JSON.stringify(memberjson));
 }
 
 /**function to fetch community members from database 
