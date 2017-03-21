@@ -1,3 +1,9 @@
+//all DOM objects used in this file.
+
+
+
+
+
 
 
 //linking to database.js file.
@@ -5,10 +11,11 @@ var database = document.createElement('script');
 database.src = '../Models/indexeddb.js';
 document.head.appendChild(database);
 
+
+
 /**This controller is the intermediary between the Records view and the database
  * 
  */
-//include the database javascript file here.
 
 
 /**Function to save the details of a new member to the local database. */
@@ -39,9 +46,7 @@ function saveNewMember() {
      document.getElementById("status").innerHTML = "alvin";
     
    
-    var result ="";
-    result= insertMember(community, firstName, lastName, birthDate, age, cardNumber, nhisCardNum, nhisExpiryDate);
-
+    //compose json object out of the details, and send to indexeddb.js for storage in database.
 }
 
 //function to clear the textboxes for a new entry

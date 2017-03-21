@@ -12,9 +12,10 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-3.1.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <body>
         <!--[if lt IE 7]>
@@ -23,14 +24,102 @@
 
 
         <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#">Main</a></li>
-                <li><a href="#">OPD</a></li>
+            <div id="page-content-wrapper">
+             <a href="records.html">   <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+    			<span class="hamb-middle"></span>
+				<span class="hamb-bottom"></span>
+            </button></a>
+                <h1>Add New Community Member</h1>
+                <form id="memberform">
+
+                    <div class="form-group">
+                        <div class="dropdown">
+                            <select type="dropdown" class="form-control btn btn-primary dropdown-toggle" id="community" data-toggle="dropdown">Community<span class="caret"></span>
+                                        
+                                        <option value="[id in database]">Community 1</option>
+                                            
+                                        </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>First name</label>
+                        <input type="text" class="form-control" id="fname">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last name</label>
+                        <input type="text" class="form-control" id="lname">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" class="active"><label>Birth Date</label>
+                        <input type="date" class="form-control" id="bdate">
+                    </div>
+
+                    <!--div class="form-group">
+                        <label>Age</label>
+                        <input type="number" class="form-control disabled" id="age">
+                    </div-->
+
+                    <div class="form-group">
+                        <label>Hospital Card Number</label>
+                        <input type="number" class="form-control" id="cardNum">
+                    </div>
+
+                    <div class="form-group">
+                        <label>NHIS Card Number</label>
+                        <input type="number" class="form-control" id="nhisNum">
+                    </div>
+
+                    <div class="form-group">
+                        <label>NHIS expiry date</label>
+                        <input type="date" class="form-control" id="nhisExpiry">
+                    </div>
+
+                    <button class="btn btn-primary form-control" onclick="storeMember()">Save</button>
+                    <br><br>
+                </form>
+
+            </div>
+
+
+            <!-- <div class="tab-pane" id="opd" role="tabpanel">
+            <form>
+                basic form goes here.
+            </form>
+        </div>
+
+
+
+        <div class="tab-pane" id="vaccination" role="tabpanel">
+            <form>
+                basic form goes here.
+            </form>
+        </div>
+
+
+
+        <div class="tab-pane" id="familyplanning" role="tabpanel">
+            <form>
+
+
+
+
+
+
+
+
+                <!--ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#" role="tab">Main</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#">OPD</a></li>
                 <li><a href="#">Vaccine</a></li>
                 <li><a href="#">Family Planning</a></li>
             </ul>
             <form>
-                <h3>For Main</h3>
+                <!--tab content-->
+            <!-- <h3>For Main</h3>
                 <div class="row">
                     <div class="dropdown col-xs-4 form-group">
                         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">CHPS Zone<span class="caret"></span></button>
@@ -42,7 +131,7 @@
                         </ul>
                     </div>
                     <!--dividing space-->
-                    <div class="col-xs-2"></div>
+            <!-- <div class="col-xs-2"></div>
                     <div class="dropdown col-sm-4 form-group">
                         <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">community<span class="caret"></span></button>
 
@@ -65,7 +154,7 @@
                         <input class="form-control" type="text">
 
                         <!-- div to make sure the cols equal 12 in this row-->
-                        <div class="col-xs-1"></div>
+            <!--     <div class="col-xs-1"></div>
                     </div>
 
                     <h3>For OPD</h3>
@@ -100,7 +189,7 @@
 
                     </div>
 
-                    <h3>For Vaccine</h3>
+                    <!--<h3>For Vaccine</h3>
                     <div class="form-group">
                         <label><input type="radio" name="radio" id="radio1" checked>Schedule</label>
                         <label><input type="radio" name="radio" id="radio2">Record</label>
@@ -112,7 +201,7 @@
 
                         <h3>For Family Planning</h3>
                         <!--start of row-->
-                        <div class="row">
+            <!--    <div class="row">
                             <div class="dropdown col-xs-5">
                                 <button type="button" class="dropdown-toggle btn btn-primary" data-toggle="dropdown">Please enter service<span class="caret"></span></button>
 
@@ -130,15 +219,18 @@
 
                             <button class="btn btn-primary">Record</button>
                         </div>
-                        <!--end of row-->
+                        end of row
                         <div class="form-group">
                             <h4> There should be some title explaining what this is</h4>
                             <label><input type="radio" name="radio" id="radio1">New Acceptor: accepted for the first time</label>
                             <label><input type="radio" name="radio" id="radio2">Continuing: stopped, but now continuing</label>
                             <label><input type="radio" name="radio" id="radio3">Revisit: revisiting for refill</label>
                         </div>
-            </form>
-            </div>
+            </form>-->
+            <!--/div-->
+
+            <script src="../Models/indexeddb.js"></script>
+            <script src="../js/add-new-community-member-controller.js"></script>
     </body>
 
 </html>
