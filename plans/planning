@@ -3,8 +3,26 @@ requirement 1: basic registration of a new member.
 
 1. get to the form.
 2. enter the details.
+    : validate the form by including this in the page; 
+        <script src="../js/jquery-validation/dist/jquery.validate.min.js"></script>
+
+        and then give the form a name, and use this '#name.validate()' to apply thevalidation to the form.
+        
 3. stored in database.
 4. display list of all users in table, with this new user as part of the list.
+
+
+
+*******************************************************
+requirement 2: using jqueryui to put basic registration on the same page as the home page. (to maintain the header and side menu)
+
+1. copy the code, and paste on the home page.
+
+2. place the code in a div, and use jqueryui to make it it's own page.
+
+
+
+
 
 
 
