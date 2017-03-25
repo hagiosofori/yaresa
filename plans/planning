@@ -1,3 +1,23 @@
+********************************
+requirement 1: basic registration of a new member.
+
+1. get to the form.
+2. enter the details.
+3. stored in database.
+4. display list of all users in table, with this new user as part of the list.
+
+
+
+
+
+
+
+
+
+
+
+
+
 want to implement the records feature.
 
 1. entering a patient who's visiting for the first time.
