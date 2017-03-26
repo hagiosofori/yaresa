@@ -59,3 +59,11 @@ function clearFields() {
 function validate() {
 
 }
+
+//function to populate community member records table with values from the database.
+
+//2. in a loop, fill the fields with the values, and attach them to the table object. and then display it on the page.
+function displayMembers(table){
+    //1. get values from database. 
+
+}

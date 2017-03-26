@@ -2,17 +2,15 @@
 
 <head>
     <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="Models/indexeddb.js"></script>
 </head>
 
 <script>
-$(function(){
-    $("#includedContent").load("Views/sidemenu-template.html");
-    $("#includeFooter").load("Views/file-ending-template.html");
-});
-
+    getMembers();
 </script>
 
 <body>
-    <div id="includedContent"></div>
+    <div id="status"></div>
     <div id="includeFooter"></div>
 </body>
+</html>
