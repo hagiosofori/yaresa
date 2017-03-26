@@ -21,45 +21,57 @@
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
 
-<div data-role="page" id="one">
-    <div id="wrapper">
-        <div class="overlay"></div>
+    <div data-role="page" id="one">
+        <div id="wrapper">
+            <div class="overlay"></div>
 
-        <!-- Sidebar -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-            <ul class="nav sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
+            <!-- Sidebar -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+                <ul class="nav sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
                        Yaresa
                     </a>
-                </li>
-                <li>
-                    <a href="Views/records.html">Records</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /#sidebar-wrapper -->
+                    </li>
+                    <li>
+                        <a href="Views/records.html">Records</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /#sidebar-wrapper -->
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+            <!-- Page Content -->
+            <div id="page-content-wrapper">
+                <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
                 <span class="hamb-top"></span>
     			<span class="hamb-middle"></span>
 				<span class="hamb-bottom"></span>
             </button>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <h1>Summary Reports Go Here</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <h1>Summary Reports Go Here</h1>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Birth date </th>
+                                <th>Hospital Card Number</th>
+                                <th>NHIS Card Number</th>
+                                <th>NHIS Expiry Date</th>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+            <!-- /#page-content-wrapper -->
 
+        </div>
+        <!-- /#wrapper -->
     </div>
-    <!-- /#wrapper -->
-</div>
 
     <script src="js/jquery-3.1.1.min.js"></script>
 
