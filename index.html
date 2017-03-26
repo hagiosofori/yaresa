@@ -54,16 +54,19 @@
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table class="table">
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Birth date </th>
-                                <th>Hospital Card Number</th>
-                                <th>NHIS Card Number</th>
-                                <th>NHIS Expiry Date</th>
-                            </tr>
-                        </table>
+                    <table class="table" id="membersTable">
+                        <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Birth date </th>
+                            <th>Hospital Card Number</th>
+                            <th>NHIS Card Number</th>
+                            <th>NHIS Expiry Date</th>
+                        </tr>
+                        </thead>
+                       
+                    </table>
                     </div>
                 </div>
             </div>
@@ -75,8 +78,12 @@
 
     <script src="js/jquery-3.1.1.min.js"></script>
 
+    <script src="Models/indexeddb.js"></script>
     <script>
         $(document).ready(function () {
+            document.getElementById('membersTable').style.visibility = "hidden";
+            populateTable(document.getElementById('membersTable'));
+
 
             var trigger = $('.hamburger'),
                 overlay = $('.overlay'),
@@ -99,6 +106,12 @@
                     trigger.addClass('is-open');
                     isClosed = true;
                 }
+            }
+
+            function populateTable(){
+                //fetch from database.
+                var members = getMembers();
+                //if there's values from the database, then populate, and make table visible.'
             }
 
             $('[data-toggle="offcanvas"]').click(function () {

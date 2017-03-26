@@ -135,7 +135,11 @@ function getMembers() {
         cursor.continue;
     }
     membersjson = membersjson + "]";
+    
+    
     document.getElementById("status").innerHTML = membersjson;
+
+    return membersjson;
 }
 
 
