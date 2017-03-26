@@ -10,7 +10,7 @@ requirement 1: basic registration of a new member.
         
 3. stored in database.
 4. display list of all users in table, with this new user as part of the list.
-
+5. ensure all fields are present on the form.
 
 
 *******************************************************
