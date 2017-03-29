@@ -145,7 +145,11 @@ function getMembers() {
 
 /*function to get a user given a username */
 function getUser(username){
-    var transaction = db.transaction(["users"], "readonly").objectStore("users")
+    var results = db.transaction(["users"], "readonly").objectStore("users").get(username);
+
+    results.onsuccess = function(e){
+        return results;
+    }
 }
 
 
