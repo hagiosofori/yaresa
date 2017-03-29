@@ -85,7 +85,7 @@ function createObjectStores(e) {
         : expiry date of NHIS [date]
         : isbirthdate 
  */
-function insertMember(memberjson) {
+function dbinsertMember(memberjson) {
     console.log("insertMember called");
 
     var transaction = db.transaction(["members"], "readwrite");
@@ -110,7 +110,7 @@ function insertMember(memberjson) {
 /**function to fetch community members from database 
  * @returns json object representing members.
 */
-function getMembers() {
+function dbgetAllMembers() {
     var transaction = db.transaction(["members"], "readonly");
     var objectStore = transaction.objectStore("members");
     var result = objectStore.openCursor();
@@ -144,7 +144,7 @@ function getMembers() {
 }
 
 /*function to get a user given a username */
-function getUser(username){
+function dbgetUser(username){
     var results = db.transaction(["users"], "readonly").objectStore("users").get(username);
 
     results.onsuccess = function(e){
