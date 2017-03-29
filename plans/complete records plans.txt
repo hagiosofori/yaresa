@@ -19,4 +19,4 @@ right now, we need to learn about jquery mobile and indexedb
 
 INDEXEDDB tutorials.
 
-just the right slide menu, to the records page.
+just the right slide menu, to the records page
