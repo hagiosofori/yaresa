@@ -1,3 +1,7 @@
+
+/* link to the tutorial on how to use the framework: https://www.codeproject.com/articles/438028/a-new-javascript-wrapper-library-for-html-s-index */
+
+
 var idbSupported = 0; //global variable to store whether indexeddb is supported by the browser.
 
 var db; //global variable to hold the database object.
@@ -23,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
  * to make changes to the db, it must be opened with a new version number. 
  * this function opens it with a new version number, if we need to make changes to the db.
  */
+
 function checkForAlreadyExistingDB() {
     console.log("in checkForAlreadyExistingblahblah");
     if (idbSupported == 1) {
@@ -48,6 +53,7 @@ function checkForAlreadyExistingDB() {
         request.onerror = function (e) {
             console.log("Error");
             console.dir(e);
+            alert("Database error!" + e.target.errorCode);
         }
 
     }
@@ -60,7 +66,8 @@ function createObjectStores(e) {
     console.log("creating object stores");
 
     if (!db.objectStoreNames.contains("members")) {
-        db.createObjectStore("members", { autoIncrement: true });
+        db.createObjectStore("members", { autoIncrement: true })
+            .createIndex();
     }
 
     if (!db.objectStoreNames.contains("users")) {
@@ -112,35 +119,44 @@ function dbinsertMember(memberjson) {
 */
 function dbgetAllMembers() {
     var transaction = db.transaction(["members"], "readonly");
+
     var objectStore = transaction.objectStore("members");
-    var result = objectStore.openCursor();
+    var results = objectStore.getAll();
 
-    
-    var membersjson; //variable to hold the json object to be returned
-    result.onsuccess = function (e) {
-        var cursor = e.target.result;
-        membersjson = "[";
+    results.onsuccess = function (e) {
+        console.log(results.result);
+        return results.result;
 
-        //looping through and creating json object from fields
-        if (cursor) {
-            membersjson += "{"+cursor.key;
-            for (var field in cursor) {
-                membersjson += '\"field\":' + cursor[field] + ",";
-            }
-            membersjson += "}";
-
-        }
-        cursor.continue();
-
-        membersjson + "{" + "\"key\":\"" + cursor.key + "\",firstname\":\"" + cursor.firstname + "\"}";
-        cursor.continue;
     }
-    membersjson = membersjson + "]";
-    
-    
-    document.getElementById("status").innerHTML = membersjson;
+    /* var result = objectStore.openCursor();
+ 
+     
+     var membersjson; //variable to hold the json object to be returned
+     result.onsuccess = function (e) {
+         var cursor = e.target.result;
+         membersjson = "[";
+ 
+         //looping through and creating json object from fields
+         if (cursor) {
+             membersjson += "{"+cursor.key;
+             for (var field in cursor) {
+                 membersjson += '\"field\":' + cursor[field] + ",";
+             }
+             membersjson += "}";
+ 
+         }
+         cursor.continue();
+ 
+         membersjson + "{" + "\"key\":\"" + cursor.key + "\",firstname\":\"" + cursor.firstname + "\"}";
+         cursor.continue;
+     }
+     membersjson = membersjson + "]";
+     
+     
+     document.getElementById("status").innerHTML = membersjson;
+ 
+     return membersjson; */
 
-    return membersjson;
 }
 
 /*function to get a user given a username */
@@ -150,6 +166,19 @@ function dbgetUser(username){
     results.onsuccess = function(e){
         return results;
     }
+}
+
+
+
+/*function to add user to database */
+function addUser(username, pword){
+    var user = {
+        name: 'alvin',
+        password: 'alvin',
+    }
+
+    var transaction = db.transaction(["users"], "readwrite").objectStore("users").add(user);
+    console.log(user +'done recording...');
 }
 
 
