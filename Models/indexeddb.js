@@ -65,6 +65,7 @@ function createObjectStores(e) {
 
     if (!db.objectStoreNames.contains("users")) {
         db.createObjectStore("users", { autoIncrement: true });
+        db.createIndex("username", "username", {unique:true});
     }
 
 }
@@ -140,6 +141,11 @@ function getMembers() {
     document.getElementById("status").innerHTML = membersjson;
 
     return membersjson;
+}
+
+/*function to get a user given a username */
+function getUser(username){
+    var transaction = db.transaction(["users"], "readonly").objectStore("users")
 }
 
 
