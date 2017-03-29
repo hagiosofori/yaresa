@@ -54,6 +54,19 @@ want to implement the records feature.
 
 
 
+•	Number of community members who accessed OPD services in a period.
+•	Number of newly insured [NHIS expiry not considered] members. Same as number of new members who are insured.
+•	Number of non-insured new members.
+•	Number of old insured community members.
+•	Number of old uninsured members.
+•	NHIS expiry [in the next 3 months]
+•	OPD cases in the last 30 days
+•	vaccine within a week before or after the current date
+•	vaccine this month [view children due for vaccination in the current month]
+•	vaccine next month
+•	Below 2 years [isn’t this a repetition of age]?
+•	count [showing number of community members registered in each community]
+•	new community members visiting for the first time in the current month
 
 
 
