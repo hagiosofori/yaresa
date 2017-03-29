@@ -160,7 +160,7 @@ function dbgetAllMembers() {
 }
 
 /*function to get a user given a username */
-function dbgetUser(username){
+function dbGetUser(username){
     var results = db.transaction(["users"], "readonly").objectStore("users").get(username);
 
     results.onsuccess = function(e){
@@ -171,7 +171,7 @@ function dbgetUser(username){
 
 
 /*function to add user to database */
-function addUser(username, pword){
+function dbAddUser(username, pword){
     var user = {
         name: 'alvin',
         password: 'alvin',
