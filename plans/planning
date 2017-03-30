@@ -184,6 +184,71 @@ learnings
 bootstrap
 : 
 
+
+tables to implement.
+********************
+communities table.  
+    : community id
+    : community name
+    : subdistrict id
+    : latitude.
+    : longitude.
+    : population.
+    : household
+
+community members opd cases.
+    : id.
+    : community member id. [int]
+    : opd case id. [int]
+    : records date. [date?]
+    : server record number. [int]
+    : record state. [int]
+    : lab. [text]
+
+family planning records.
+    : service record id.[int]
+    : service id [int]
+    : community member id. [int]
+    : service date [int]
+    : quantity [number]
+    : record state. [int]
+    : service schedule date.
+    : service type id.
+
+family planning services.
+    : service id. [int]
+    : service name. [text]
+    : service schedule [int]
+    : display order [int]
+
+family planning services  
+    : service id. [int]
+    : service name. [text]
+    : service schedule. [int]
+    : display order. [int]
+
+: opd case categories.
+    : opd case category id.
+    : opd case category name.
+
+opd cases.
+    : opd case id. [int]
+    : opd case name. [text]
+    : opd cae category. [int]
+    : opd case display order. [int]
+
+vaccine records.
+    : vaccine record id.
+    : vaccine id.
+    : community member id.
+    : vaccine date.
+    : record date.
+
+vaccines.
+    : vaccine id.
+    : vaccine name.
+    : vaccine schedule [int]
+
 *****************************************
 : from dr. amanquah
 1. work on recording patient visits functionality. that is the most important
