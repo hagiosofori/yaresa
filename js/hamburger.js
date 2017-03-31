@@ -1,7 +1,7 @@
   function hamburger (){
           //  document.getElementById('membersTable').style.visibility = "hidden";
             //populateTable(document.getElementById('membersTable'));
-
+            console.log('in hamburger');
 
             var trigger = $('.hamburger'),
                 overlay = $('.overlay'),
