@@ -20,7 +20,6 @@ function Member(fname, lname, bdate, g, cardNum, nhisNum, nhisexpiry, isbirthdat
     this.NHISCardNum = nhisNum;
     this.NHISexpiry = nhisexpiry;
     this.hasbirthDate = isbirthdate;
-    this.members = [];
     this.stored = s;
 
     this.getAllMembers = function () {

@@ -1,5 +1,4 @@
-$(document).ready(function () {
-
+function hamburger(){
   var trigger = $('.hamburger'),
     overlay = $('.overlay'),
     isClosed = true;
@@ -26,4 +25,4 @@ $(document).ready(function () {
   $('[data-toggle="offcanvas"]').click(function () {
     $('#wrapper').toggleClass('toggled');
   });
-});
+}
