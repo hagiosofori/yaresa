@@ -14,6 +14,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+     <script src="js/jquery-3.1.1.min.js"></script>
+
+    <script src="Models/indexeddb.js"></script>
+  
 </head>
 
 <body>
@@ -21,7 +25,6 @@
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
 
-    <div data-role="page" id="one">
         <div id="wrapper">
             
 
@@ -80,12 +83,8 @@
 
         </div>
         <!-- /#wrapper -->
-    </div>
 
-    <script src="js/jquery-3.1.1.min.js"></script>
-
-    <script src="Models/indexeddb.js"></script>
-    <script>
+     <script>
         $(document).ready(function () {
           //  document.getElementById('membersTable').style.visibility = "hidden";
             //populateTable(document.getElementById('membersTable'));

@@ -2,47 +2,57 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/w3.css">
     <script src='../js/jquery-3.1.1.min.js'></script>
-    <link rel="stylesheet" href="css/index.css">
-    
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/hamburger.js"></script>
+    <script>$(document).ready(hamburger());</script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-         <!-- Sidebar -->
-            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-                <ul class="nav sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="#">
+    <!-- Sidebar -->
+    <div id="wrapper">
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="../index.html">
                        Yaresa
                     </a>
-                    </li>
-                    <li>
-                        <a href="/Views/records.html">Records</a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /#sidebar-wrapper -->
+                </li>
+                <li>
+                    <a href="/records.html">Records</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
 
-            <!-- Page Content -->
-                    <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
                 <span class="hamb-top"></span>
     			<span class="hamb-middle"></span>
 				<span class="hamb-bottom"></span>
             </button>
-           
-           <script src="../js/hamburger.js"></script>
-    </body>
+
+
+        </div>
+    </div>
+</body>
+
 </html>

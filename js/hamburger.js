@@ -1,4 +1,4 @@
-  $(document).ready(function () {
+  function hamburger (){
           //  document.getElementById('membersTable').style.visibility = "hidden";
             //populateTable(document.getElementById('membersTable'));
 
@@ -36,4 +36,4 @@
             $('[data-toggle="offcanvas"]').click(function () {
                 $('#wrapper').toggleClass('toggled');
             });
-        });
+        }
