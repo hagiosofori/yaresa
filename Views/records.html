@@ -32,51 +32,51 @@
 
             <!-- Sidebar -->
             <div id="wrapper">
-            <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
-                <ul class="nav sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="../index.html">
+                <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+                    <ul class="nav sidebar-nav">
+                        <li class="sidebar-brand">
+                            <a href="../index.html">
                        Yaresa
                     </a>
-                    </li>
-                    <li>
-                        <center ><a href="../Views/records.html" >Records</a></center>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /#sidebar-wrapper -->
+                        </li>
+                        <li>
+                            <center><a href="../Views/records.html">Records</a></center>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /#sidebar-wrapper -->
 
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
+                <!-- Page Content -->
+                <div id="page-content-wrapper">
                     <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
                 <span class="hamb-top"></span>
     			<span class="hamb-middle"></span>
 				<span class="hamb-bottom"></span>
             </button>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <h1>Community Member Records</h1>
-                            <div id="membersList">
-                                <div class="w3-panel w3-card w3-yellow">Alvin</div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-8 col-lg-offset-2">
+                                <h1>Community Member Records</h1>
+                                <div id="membersList">
+                                    <div class="w3-panel w3-card w3-yellow">Alvin</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-                
 
 
-                            <script src="../Controllers/MembersController.js"></script>
-                            <script>
+
+            <script src="../Controllers/MembersController.js"></script>
+            <script>
                             $(document).ready(function(){
                                 console.log('inside doc ready fxn. about to call popoulate member.')
                                 populateMembers()
                             });
                             </script>
-                            <script src='../js/hamburger.js'></script>
-                            <script>
+            <script src='../js/hamburger.js'></script>
+            <script>
                             $(document).ready(hamburger());</script>
 
 
@@ -104,9 +104,9 @@
 
 
 
-                            <!--body of records.html page -->
-                            <div class="dropdown">
-                                <!--button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">Select Community
+            <!--body of records.html page -->
+            <div class="dropdown">
+                <!--button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">Select Community
   <span class="caret"></span></button>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">All Communities</a></li>
@@ -175,7 +175,7 @@
 
                                 <!--modal for add new community member form-->
 
-                                <!--div class="modal fade" id="addmember">
+                <!--div class="modal fade" id="addmember">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -187,7 +187,7 @@
 
                                             <div class="modal-body">
                                                 <!--in here, a form having the basic, opd, vaccination and family planning details of the member-->
-                                <!--ul class="nav nav-tabs" role="tablist">
+                <!--ul class="nav nav-tabs" role="tablist">
                                                     <li class="nav-item">
                                                         <a class="nav-link active" href="#basic" role="tab" data-toggle="tab">Basic</a>
                                                     </li>
@@ -203,7 +203,7 @@
                                                 </ul>
 
                                                 <!--Tab Content -->
-                                <!--div class="tab-content">
+                <!--div class="tab-content">
                                                     <div class="tab-pane  active" id="basic" role="tabpanel">
                                                         <form id="memberform">
 
@@ -294,19 +294,19 @@
 
                     <!-- /#page-content-wrapper -->
 
-                            </div>
-                            <!-- /#wrapper -->
-                            <script href="../js/index.js"></script>
-                            <script src="../js/jquery-3.1.1.min.js"></script>
+            </div>
+            <!-- /#wrapper -->
+            <script href="../js/index.js"></script>
+            <script src="../js/jquery-3.1.1.min.js"></script>
 
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-                                crossorigin="anonymous"></script>
-                            <script src="../js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-                                crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+                crossorigin="anonymous"></script>
+            <script src="../js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+                crossorigin="anonymous"></script>
 
 
-                            <script type="text/javascript" src="../Models/indexeddb.js"></script>
-                            <script src="../Controllers/RecordsController.js"></script>
+            <script type="text/javascript" src="../Models/indexeddb.js"></script>
+            <script src="../Controllers/RecordsController.js"></script>
 </body>
 
 </html>

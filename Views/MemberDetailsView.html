@@ -19,7 +19,8 @@
     <script src='../js/jquery-3.1.1.min.js'></script>
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/hamburger.js"></script>
-    <script>$(document).ready(hamburger());</script>
+    <script src="../Controllers/MembersController.js"></script>
+    <script>window.onload(hamburger(), loadMemberDetailsPage());</script>
 </head>
 
 <body>
@@ -51,9 +52,26 @@
             </button>
 
             <div class="container">
-                <h1>Member Details</h1>
+                <h1><span id="username">Member</span> Details</h1>
 
 
+                <ul class="nav nav-tabs">
+                    <li class="active"> <a data-toggle="tab" href="#opd">OPD</a></li>
+                    <li><a data-toggle="tab" href="#vacrec">Vaccination</a></li>
+                    <li><a data-toggle="tab" href="#famplan">Family Planning </a></li>
+                </ul>
+
+                <div id="opd" class="tab-pane fade in active">
+                    <div id="familyPlanning">OPD tab</div>
+                </div>
+                <div id="vacrec" class="tab-pane fade">
+                    <div id="familyPlanning">Vaccination records tab</div>
+                </div>
+
+                <div id="famplan" class="tab-pane fade">
+                    <div id="familyPlanning">Family Planning tab</div>
+                </div>
+                </div>
             </div>
 
         </div>
