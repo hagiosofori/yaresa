@@ -1,3 +1,13 @@
-document.onload(
-    //show member details in the various tabs.
-);
+var records = [
+    {
+        memberName: 'Alvin',
+        opdRecords: [
+            {
+                id: 1,
+                category: 'Mental health',
+                display_order: 'Referral',
+                
+            }
+        ]
+    }
+]

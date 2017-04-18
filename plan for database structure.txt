@@ -1,0 +1,52 @@
+members module.
+
+create member.
+
+read member.
+
+update member.
+
+delete member.
+
+
+member{
+    id,
+    firstname,
+    lastname,
+    community,
+    birthdate,
+    gender,
+    cardNumber,
+    NHISid,
+    NHISexpiryDate,
+    synced,
+    opRecords,
+    familyPlanningRecords,
+    vaccinationRecords,
+
+}
+
+opdRecord{
+    opdCaseID,
+    recordDate,
+    serverRecordNumber,
+    recorded,
+    labReport,
+}
+
+familyPlanningRecord{
+    recordID,
+    service,
+    date,
+    quantity,
+    recordState,
+    serviceSchedule,
+    serviceType,
+}
+
+vaccinationRecord{
+    recordID,
+    vaccine,
+    date,
+    recorded,
+}
