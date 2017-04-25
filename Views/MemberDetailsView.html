@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="records.html">Records</a>
+                    <a href="records.html" style='color: white'>Records</a>
                 </li>
             </ul>
         </nav>
@@ -63,17 +63,18 @@
                 <div class='tab-content'>
                     <div id="opd" class="tab-pane fade in active">
                         <br><button class='btn btn-primary btn-block' data-target="#addopd" data-toggle="modal">Add New OPD Record
-
                         </button>
+                        <br>
                         <div id="opdrecords">OPD tab</div>
                     </div>
                     <div id="vacrec" class="tab-pane fade">
-                        <br><button class='btn btn-primary btn-block' data-target="#addvac" data-toggle='modal'>Add New Vacation Record</button>
+                        <br><button class='btn btn-primary btn-block' data-target="#addvac" data-toggle='modal'>Add New Vacation Record</button><br>
                         <div id="vacationrecords">Vaccination records tab</div>
                     </div>
+                    
 
                     <div id="famplan" class="tab-pane fade">
-                        <br><button class='btn btn-primary btn-block' data-target='#addfam' data-toggle='modal'>Add New Family Planning Record</button>
+                        <br><button class='btn btn-primary btn-block' data-target='#addfam' data-toggle='modal'>Add New Family Planning Record</button><br>
                         <div id="familyPlanning">Family Planning tab</div>
                     </div>
                 </div>
@@ -96,22 +97,61 @@
                                 <form>
                                     <div class='form-group'>
                                         <label>Case</label>
-                                        <input type='text' placeholder='Case' class='form-control'>
+                                        <input type='text' class='form-control' id='opdcase'>
                                     </div>
                                     <div class='form-group'>
                                         <label>Date</label>
-                                        <input type='date' placeholder='Date' class='form-control'>
+                                        <input type='date' class='form-control' id=opddate>
                                     </div>
                                     <div class='form-group'>
 
-                                        <label>Lab Report</label>
-                                        <input type='text' placeholder='Lab Report' class='form-control'>
+                                        <label>OPD Case Category</label>
+                                        <input type='text' class='form-control' id=opdcasecat>
                                     </div>
                                 </form>
 
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+                                <button class='btn btn-primary' data-dismiss='modal' onclick='addNewOPD()'>Save</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!--OPD Modal for editing opd record-->
+                <div id="editopd" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Enter Out Patient Dept. record details</h4>
+                            </div>
+                            <div class="modal-body">
+
+                                <form>
+                                    <div class='form-group'>
+                                        <label>Case</label>
+                                        <input type='text' class='form-control' id='eopdcase' value='example disease'>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label>Date</label>
+                                        <input type='date' class='form-control' id=eopddate value='2012-12-12'>
+                                    </div>
+                                    <div class='form-group'>
+
+                                        <label>OPD Case Category</label>
+                                        <input type='text' class='form-control' id=eopdcasecat value='Communicable Immune'>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" data-dismiss='modal'>Back</button>
+                                <button class='btn btn-primary' data-dismiss='modal' onclick='editOPD()'>Save</button>
                             </div>
                         </div>
 
@@ -165,13 +205,26 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Modal Header</h4>
+                                <h4 class="modal-title">Add Vaccination Record</h4>
                             </div>
                             <div class="modal-body">
-                                <p>Some text in the modal.</p>
+                                <form>
+                                    <div class='form-group'>
+                                        <label>Vaccine</label>
+                                        <input type='text' id='addvacvac' class='form-control'>
+                                        
+                                    </div>
+                                    <div class='form-group'>
+                                        <label>Vaccine Date</label>
+                                        <input type='date' id='addvacdate' class='form-control'>
+                                    </div>
+                                    
+                                    
+                                </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal" onclick='addvaccine()'>Save</button>
                             </div>
                         </div>
 
@@ -181,106 +234,10 @@
                 <script src="../Controllers/MembersController.js"></script>
 
                 <script>
-                    window.onload = function () {
-                        hamburger();
-                        displayDetails();
-                    }
-
-                    var members = [
-                        {
-                            id: 1,
-                            firstname: 'alvin',
-                            lastname: 'ofori',
-                            cardnumber: '12345',
-                            stored: 'true',
-                            gender: 'M',
-                            opdRecords: [
-                                {
-                                    opdCaseID: 1,
-                                    recordDate: '12/12/12',
-                                    serverRecordNumber: 1,
-                                    recorded: true,
-                                    labReport: 'something',
-                                },
-                            ],
-                            vaccinationRecords: [
-
-                            ],
-                            familyPlanningRecords: [
-
-                            ],
-                        },
-                        {
-                            id: 2,
-                            firstname: 'florence',
-                            lastname: 'bota',
-                            cardnumber: '54322',
-                            stored: 'false',
-                            gender: 'F',
-                            opdRecords: [
-                                {
-                                    opdCaseID: 2,
-                                    recordDate: '12/12/12',
-                                    serverRecordNumber: 2,
-                                    recorded: true,
-                                    labReport: 'something',
-                                },
-                                {
-                                    opdCaseID: 3,
-                                    recordDate: '1/12/15',
-                                    serverRecordNumber: 2,
-                                    recorded: true,
-                                    labReport: 'something2',
-                                }
-                            ],
-                            vaccinationRecords: [
-
-                            ],
-                            familyPlanningRecords: [
-
-                            ],
-                        }
-                    ];
-
-                    //function to display details of selected member in DetailsView.
-                    function displayDetails(memberid) {
-                        //display patient's name on the page
-                        var currentMember = members[1];
-                        document.getElementById('username').innerHTML = currentMember.firstname + ' ' + currentMember.lastname + "'s";
-
-                        console.log('in displayDetails with ' + currentMember.opdRecords);
-                        //show the details in their respective panes.
-                        var opdDiv = document.getElementById('opdrecords');
-                        var vacDiv = document.getElementById('vacationrecords');
-                        var famDiv = document.getElementById('familyPlanning');
-
-                        var opdTable = "<table class='table table-striped table-responsive'><tr><th>Date</th><th>Lab Report</th><th>Actions</th></tr>";
-
-                        var vacTable = "<table class='table table-striped table-responsive'><tr><th>Vaccine</th><th>Vaccine Date</th><th>Actions</th></tr>";
-
-                        var famTable = "<table class='table table-striped table-responsive'><tr><th>Service</th><th>Date</th><th>Quantity</th><th>Service Schedule</th><th>Service Type</th><th>Actions</th></tr>"
-
-                        //filling opd values on page.
-                        currentMember.opdRecords.forEach(function (element, index) {
-                            opdTable += "<tr><td>" + element.recordDate + "</td><td>" + element.labReport + "</td><td><div class='btn-group'><button class='btn btn-primary' onclick='#'>Edit</button><button class='btn btn-primary' onclick='#'>Delete</button></div></td></tr>"
-                        }, this);
-                        opdTable += '</table>';
-                        opdDiv.innerHTML = opdTable;
-
-                        //filling vaccination details on page.
-                        currentMember.vaccinationRecords.forEach(function (element, index) {
-                            vacTable += "<tr><td>" + element.vaccine + "</td><td>" + element.date + "</td><td><div class='btn-group-vertical'><button class='btn-primary btn' onclick='#'>Edit</button> <button class='btn btn-primary' onclick='#'>Delete</button></div></td></tr>"
-                        }, this);
-                        vacTable += '</table>';
-                        vacDiv.innerHTML = vacTable;
-
-                        currentMember.familyPlanningRecords.forEach(function (element, index) {
-                            famTable += "<tr><td>" + element.service + "</td><td>" + element.labReport + "</td><td>" + element.date + "</td><td>" + element.quantity + "</td><td>" + element.serviceSchedule + "</td><td><div class='btn-group'> <button class='btn btn-primary' onclick='#'>Edit</button> <button class='btn btn-primary' onclick='#'>Delete</button></div></td></tr>"
-                        }, this);
-                        famTable += '</table>';
-                        famDiv.innerHTML = famTable;
-
-                    }
+                                                                                              window.onload = function () {
+                                                                                                  hamburger();
+                                                                                                  displayDetails();
+                                                                                              }
                 </script>
 </body>
 

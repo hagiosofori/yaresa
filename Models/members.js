@@ -10,7 +10,7 @@
  * @param {*member's birthdate is set or not} isbirthdate 
  */
 
-function Member(fname, lname, bdate, g, cardNum, nhisNum, nhisexpiry, isbirthdate, s) {
+function Member(fname, lname, bdate, g, cardNum, nhisNum, nhisexpiry, isbirthdate) {
     this.id = '';
     this.firstname = fname;
     this.lastname = lname;
@@ -20,7 +20,6 @@ function Member(fname, lname, bdate, g, cardNum, nhisNum, nhisexpiry, isbirthdat
     this.NHISCardNum = nhisNum;
     this.NHISexpiry = nhisexpiry;
     this.hasbirthDate = isbirthdate;
-    this.stored = s;
 
     this.getAllMembers = function () {
         //fetch from the database.

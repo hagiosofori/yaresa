@@ -28,6 +28,8 @@ member{
 
 opdRecord{
     opdCaseID,
+    opdCaseName,
+    opdCaseCategory,
     recordDate,
     serverRecordNumber,
     recorded,
